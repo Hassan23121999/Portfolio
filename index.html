@@ -1575,7 +1575,7 @@
 
             <div class="contact-form">
                 <h3>Send a Message</h3>
-                <form id="contactForm">
+                <form action="https://formspree.io/f/mvgqryvg" method="POST">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" required>
@@ -1592,6 +1592,10 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
+                
+                    <!-- Optional: Redirect after form submission -->
+                    <input type="hidden" name="_next" value="https://hassan23121999.github.io/Portfolio/thankyou.html">
+                
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
             </div>

@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Hassan Saleem - AI Engineer & CAD Automation Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0066ff;
+            --secondary: #00d4ff;
+            --accent: #ff6b35;
+            --dark: #0a0a0a;
+            --light: #f5f5f5;
+            --gradient: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+            --gradient-accent: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--gradient);
+            border-radius: 50%;
+            opacity: 0.1;
+            top: -200px;
+            right: -200px;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            opacity: 0.1;
+            bottom: -150px;
+            left: -150px;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.3s both;
+            font-style: italic;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.4s both;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-accent {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #f8f9fa;
+            padding: 3rem 2rem;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--gradient);
+            padding: 5px;
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+            animation: pulse 3s infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: #f0f7ff;
+            border-left: 4px solid var(--primary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .skill-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-section h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.2);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-level {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        /* Projects */
+        .project-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .project-video {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* .project-video::before {
+            content: '▶';
+            font-size: 3rem;
+            color: white;
+            background: rgba(0, 102, 255, 0.8);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        } */
+
+        .project-card:hover .project-video::before {
+            transform: scale(1.1);
+        }
+
+        .video-placeholder {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--gradient);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 50%;
+            top: 2rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content h4 {
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .achievements {
+            margin-top: 1rem;
+        }
+
+        .achievements li {
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .achievements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--gradient);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .institution {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card .date {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h4 {
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-dot {
+                left: 20px !important;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#ai-tools">AI Tools</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Muhammad Hassan Saleem</h1>
+            <p class="subtitle">AI Engineer | CAD Automation Specialist | ML Solutions Architect</p>
+            <p class="tagline">"Bridging the gap between traditional engineering and cutting-edge AI to create intelligent manufacturing solutions"</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="mailto:muhammadhassansaleem9@gmail.com" class="btn btn-secondary">Contact Me</a>
+                <a href="resume.pdf" download class="btn btn-accent">Download CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">ML Models Deployed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">80%</div>
+                <div class="stat-label">CAD Feature Accuracy</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Deployment Time Reduction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">27+</div>
+                <div class="stat-label">Complex CAD Models</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="section-subtitle">Combining mechanical engineering expertise with AI innovation</p>
+        <div class="about-content">
+            <div class="profile-img">
+                <img src="images/photo.png" alt="Muhammad Hassan Saleem">
+            </div>
+            <div class="about-text">
+                <h3>Transforming Manufacturing Through AI</h3>
+                <p>As an AI Engineer with a strong foundation in mechanical engineering, I specialize in developing intelligent systems that revolutionize manufacturing and engineering workflows. Currently at MAindTec GmbH in Ingolstadt, I'm pioneering AI-powered solutions that automate complex processes, from CAD model analysis to manufacturing cost estimation.</p>
+                
+                <div class="highlight-box">
+                    <strong>Current Focus:</strong> Building specialized LLM and LVM-based AI agents for industrial automation, integrating cutting-edge AI with traditional CAD tools through Model Context Protocols (MCP).
+                </div>
+                
+                <p>My journey from mechanical engineering to AI has equipped me with a unique perspective on solving industrial challenges. I'm passionate about creating smarter, more efficient, and sustainable solutions that help industries evolve with innovative technologies.</p>
+                
+                <p><strong>Key Achievements:</strong></p>
+                <ul class="achievements">
+                    <li>Successfully integrated LLMs with 3D CAD tools for natural language automation</li>
+                    <li>Built 90% accurate 2D drawing analysis system that works 10x faster</li>
+                    <li>Created multimodal RAG system handling 10K+ documents</li>
+                    <li>Pioneered first-of-its-kind MCP integration with CAD tools</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tools Showcase Section -->
+    <section id="ai-tools" style="background: #f8f9fa; padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2>AI-Powered Engineering Tools</h2>
+            <p class="section-subtitle">Revolutionary tools transforming CAD and manufacturing workflows</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- Intelligent 2D Drawing Analysis -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📊</div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Intelligent 2D Drawing Analysis</h3>
+                    <p style="color: #666; font-size: 0.95rem;">AI-powered system for automated interpretation of 2D mechanical drawings, achieving 95% accuracy in extracting complex engineering information.</p>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+                        95% Accuracy • 10x Faster • Production Ready
+                    </div>
+                </div>
+            
+                <!-- Natural Language CAD Automation -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Natural Language CAD Automation</h3>
+                    <p style="color: #666; font-size: 0.95rem;">First-of-its-kind MCP integration with 3D CAD tools, enabling natural language commands through Claude and other LLMs.</p>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+                        First of its kind • Claude Integration
+                    </div>
+                </div>
+            
+                <!-- Enterprise Multimodal RAG System -->
+                <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🗄️</div>
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">Enterprise Multimodal RAG</h3>
+                    <p style="color: #666; font-size: 0.95rem;">Production-grade document query system handling text, images, and technical drawings with advanced retrieval capabilities.</p>
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--accent); font-weight: 600;">
+                        10K+ Documents • Cloud Deployed
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#projects" class="btn btn-primary">See All Projects in Detail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Technical Expertise</h2>
+        <p class="section-subtitle">Comprehensive skill set spanning AI, ML, and engineering domains</p>
+        <div class="skills-container">
+            <div class="skill-section">
+                <h3>🤖 AI & Machine Learning</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">🧠</div>
+                        <div class="skill-name">Large Language Models</div>
+                        <div class="skill-level">Expert</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">👁️</div>
+                        <div class="skill-name">Computer Vision</div>
+                        <div class="skill-level">Expert</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔧</div>
+                        <div class="skill-name">PyTorch</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📊</div>
+                        <div class="skill-name">TensorFlow</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🦙</div>
+                        <div class="skill-name">LlamaIndex</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🗄️</div>
+                        <div class="skill-name">Milvus/Pinecone</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-section">
+                <h3>⚙️ Engineering & CAD</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">📐</div>
+                        <div class="skill-name">PTC Creo</div>
+                        <div class="skill-level">Expert</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔷</div>
+                        <div class="skill-name">SolidWorks</div>
+                        <div class="skill-level">Familiar</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🏭</div>
+                        <div class="skill-name">Siemens NX</div>
+                        <div class="skill-level">Familiar</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔄</div>
+                        <div class="skill-name">CAD Automation</div>
+                        <div class="skill-level">Expert</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-section">
+                <h3>💻 Development & Tools</h3>
+                <div class="skill-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">🐍</div>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-level">Expert</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🐳</div>
+                        <div class="skill-name">Docker</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">⚡</div>
+                        <div class="skill-name">FastAPI</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔀</div>
+                        <div class="skill-name">Git/GitHub</div>
+                        <div class="skill-level">Proficient</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🔄</div>
+                        <div class="skill-name">CI/CD</div>
+                        <div class="skill-level">Familiar</div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">🐧</div>
+                        <div class="skill-name">Linux</div>
+                        <div class="skill-level">Familiar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <p class="section-subtitle">Innovative AI solutions for manufacturing and engineering challenges</p>
+        
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ai">AI/ML</button>
+            <button class="filter-btn" data-filter="cad">CAD Automation</button>
+            <button class="filter-btn" data-filter="vision">Computer Vision</button>
+            <button class="filter-btn" data-filter="tools">AI Tools</button>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card" data-category="vision ai">
+                <span class="project-badge">Featured</span>
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/DNFZBkKynAM" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>Intelligent 2D Drawing Analysis System</h3>
+                    <p>Developed an AI-powered system for automated interpretation of 2D mechanical drawings, achieving high accuracy in extracting complex engineering information.</p>
+                    <div class="project-metrics">
+                        <div class="metric">📊 95% Accuracy</div>
+                        <div class="metric">⚡ 10x Faster</div>
+                        <div class="metric">🔧 Production Ready</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">YOLOv8</span>
+                        <span class="tech-tag">Label Studio</span>
+                        <span class="tech-tag">LVM Agents</span>
+                        <span class="tech-tag">Computer Vision</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="cad ai">
+                <span class="project-badge">Innovation</span>
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/qiJLw7ZBBEU" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>Natural Language CAD Automation</h3>
+                    <p>Pioneered integration of Model Context Protocols (MCP) with 3D CAD tools, enabling engineers to create and modify designs using natural language commands through Claude and other LLMs.</p>
+                    <div class="project-metrics">
+                        <div class="metric">🎯 First of its kind</div>
+                        <div class="metric">💬 Natural Language</div>
+                        <div class="metric">🔗 Claude Integration</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Model Context Protocol</span>
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">CAD APIs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="ai">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/QR3nvppKW5I" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>Enterprise Multimodal RAG System</h3>
+                    <p>Built a production-grade document query system handling text, images, and technical drawings with advanced retrieval capabilities.</p>
+                    <div class="project-metrics">
+                        <div class="metric">📚 10K+ Documents</div>
+                        <div class="metric">🎨 Multimodal</div>
+                        <div class="metric">☁️ Cloud Deployed</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">LlamaIndex</span>
+                        <span class="tech-tag">Milvus</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Azure</span>
+                    </div>
+                </div>
+            </div>
+            <!-- CAD Analyzer Project -->
+            <div class="project-card" data-category="ai cad">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/3OQf-CpsgVA" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>Intelligent CAD Analyzer</h3>
+                    <p>AI-powered system for comprehensive CAD model analysis, including feature recognition, manufacturability assessment, and design optimization suggestions. Provides actionable insights for engineering teams.</p>
+                    <div class="project-metrics">
+                        <div class="metric">🔍 Deep Analysis</div>
+                        <div class="metric">🏭 DFM Checks</div>
+                        <div class="metric">💡 Smart Suggestions</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Feature Recognition</span>
+                        <span class="tech-tag">ML Analysis</span>
+                        <span class="tech-tag">Manufacturing Rules</span>
+                        <span class="tech-tag">AI Insights</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-category="ai cad">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/jGxnqUN7LpU" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>AI-Powered 3D Model Generation</h3>
+                    <p>Created a pipeline that converts natural language descriptions into 3D printable models, revolutionizing rapid prototyping workflows.</p>
+                    <div class="project-metrics">
+                        <div class="metric">🎨 Text-to-3D</div>
+                        <div class="metric">🖨️ Print Ready</div>
+                        <div class="metric">⏱️ Minutes to Model</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Diffusion Models</span>
+                        <span class="tech-tag">3D Generation</span>
+                        <span class="tech-tag">NLP</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="vision ai">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/WcfhYBDH_Bk" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>Automated Design Review Pipeline</h3>
+                    <p>AI system that detects errors, missing dimensions, and manufacturing issues in technical drawings, preventing costly production mistakes.</p>
+                    <div class="project-metrics">
+                        <div class="metric">🔍 Error Detection</div>
+                        <div class="metric">💰 Cost Savings</div>
+                        <div class="metric">✅ Quality Assurance</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Llama Index</span>
+                        <span class="tech-tag">Mistral</span>
+                        <span class="tech-tag">Quality Control</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GearGPT Project -->
+            <div class="project-card" data-category="ai tools cad">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/zbvVS8I-2Co" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>GearGPT - Natural Language Gear Design</h3>
+                    <p>Revolutionary AI tool that generates mechanical gears through natural language commands. Engineers can describe gear specifications in plain English, and GearGPT instantly creates accurate 3D models ready for manufacturing.</p>
+                    <div class="project-metrics">
+                        <div class="metric">💬 Natural Language</div>
+                        <div class="metric">⚙️ Instant Generation</div>
+                        <div class="metric">🎯 Manufacturing Ready</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">GPT Integration</span>
+                        <span class="tech-tag">CAD Automation</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">3D Modeling</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAD Generator Project -->
+            <div class="project-card" data-category="ai tools cad">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/XrdoDOzea-Y" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>AI CAD Generator - Synthetic Parts at Scale</h3>
+                    <p>Developed an AI system capable of generating thousands to millions of synthetic CAD parts in seconds. This tool enables rapid prototyping, ML training data generation, and design space exploration at unprecedented scale.</p>
+                    <div class="project-metrics">
+                        <div class="metric">🚀 1M+ Parts/Hour</div>
+                        <div class="metric">🎲 Infinite Variations</div>
+                        <div class="metric">📊 ML Training Ready</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Generative AI</span>
+                        <span class="tech-tag">Parametric Design</span>
+                        <span class="tech-tag">High Performance</span>
+                        <span class="tech-tag">Cloud Scale</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAD Weight Optimization Project -->
+            <div class="project-card" data-category="ai cad">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/iJYmVrkMgsk" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>CAD Weight Optimization AI</h3>
+                    <p>Advanced AI system for automated weight optimization of CAD models while maintaining structural integrity. Reduces material costs and improves performance through intelligent design modifications.</p>
+                    <div class="project-metrics">
+                        <div class="metric">⚖️ 40% Weight Reduction</div>
+                        <div class="metric">💪 Strength Maintained</div>
+                        <div class="metric">💰 Cost Optimized</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">Topology Optimization</span>
+                        <span class="tech-tag">FEA Integration</span>
+                        <span class="tech-tag">AI Optimization</span>
+                        <span class="tech-tag">CAD Automation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP Analyzer Project -->
+            <div class="project-card" data-category="ai tools cad">
+                <div class="project-video">
+                    <iframe width="100%" height="250" 
+                            src="https://www.youtube.com/embed/STEP_ANALYZER_ID" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="project-content">
+                    <h3>STEP File Analyzer & Cost Estimator</h3>
+                    <p>Comprehensive analysis tool that extracts metadata from STEP files including volume, surface area, and geometric features. Performs intelligent cost analysis based on manufacturing rules and material properties.</p>
+                    <div class="project-metrics">
+                        <div class="metric">📐 Full Geometry Analysis</div>
+                        <div class="metric">💵 Instant Cost Estimate</div>
+                        <div class="metric">📊 Detailed Reports</div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-tag">STEP Processing</span>
+                        <span class="tech-tag">Geometric Analysis</span>
+                        <span class="tech-tag">Cost Modeling</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience">
+        <h2>Professional Journey</h2>
+        <p class="section-subtitle">Progressive experience in AI and engineering innovation</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Development Engineer - AI Solutions</h3>
+                    <h4>MAindTec GmbH, Ingolstadt</h4>
+                    <p class="timeline-date">January 2025 - Present</p>
+                    <ul class="achievements">
+                        <li>Leading AI initiatives for CAD automation and manufacturing optimization</li>
+                        <li>Developed specialized LLM/LVM-based AI agents for industrial applications</li>
+                        <li>Pioneered MCP integration with 3D CAD tools for natural language automation</li>
+                        <li>Deployed production-grade multimodal RAG systems</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Working Student - Research Scientist</h3>
+                    <h4>Fraunhofer IPA, Stuttgart</h4>
+                    <p class="timeline-date">July 2023 - May 2024</p>
+                    <ul class="achievements">
+                        <li>Conducted research in computer-aided production planning</li>
+                        <li>Built ML models achieving 80% accuracy for CAD feature prediction</li>
+                        <li>Designed 27+ complex 3D mechanical CAD models</li>
+                        <li>Benchmarked 7 CAPP systems for master's thesis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Junior Machine Learning Engineer</h3>
+                    <h4>Cyberify, Multan</h4>
+                    <p class="timeline-date">May 2022 - April 2023</p>
+                    <ul class="achievements">
+                        <li>Deployed 5+ ML models for business automation</li>
+                        <li>Reduced model deployment time by 30% through ML-Ops optimization</li>
+                        <li>Contributed to 2 multimodal AI projects</li>
+                        <li>Trained 10+ models using TensorFlow, Keras, and PyTorch</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Python Developer</h3>
+                    <h4>Cyberify, Multan</h4>
+                    <p class="timeline-date">December 2021 - April 2022</p>
+                    <ul class="achievements">
+                        <li>Developed Python scripts for data processing and automation</li>
+                        <li>Created data analysis tools using NumPy, Pandas, and Matplotlib</li>
+                        <li>Supported data-driven decision-making processes</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Trainee Test Engineer</h3>
+                    <h4>Changan Automobile, Multan</h4>
+                    <p class="timeline-date">July 2021 - November 2021</p>
+                    <ul class="achievements">
+                        <li>Validated automotive CAD models for manufacturability</li>
+                        <li>Performed dimensional analysis and quality checks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <p class="section-subtitle">Strong academic foundation in AI and mechanical engineering</p>
+        <div class="education-grid">
+            <div class="education-card">
+                <h3>Master of Engineering (M.Eng.)</h3>
+                <p class="institution">Deggendorf Institute of Technology, Germany</p>
+                <p class="date">March 2022 - April 2024</p>
+                <p><strong>Major:</strong> Artificial Intelligence for Smart Sensors and Actuators</p>
+                <p><strong>Thesis:</strong> Development of a Benchmarking Environment for CAPP Systems</p>
+                <div class="highlight-box">
+                    <strong>Key Projects:</strong>
+                    <ul class="achievements">
+                        <li>Turtle Bot Automatic Parking System using LIDAR and ROS</li>
+                        <li>Speech Command Recognition System using PyTorch</li>
+                        <li>Advanced Car Detection System</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="education-card">
+                <h3>Bachelor of Science (B.S.)</h3>
+                <p class="institution">Ghulam Ishaq Khan Institute, Pakistan</p>
+                <p class="date">September 2017 - June 2021</p>
+                <p><strong>Major:</strong> Mechanical Engineering</p>
+                <p><strong>Thesis:</strong> Development of Four-wheel Steering Mechanism</p>
+                <div class="highlight-box">
+                    <strong>Foundation:</strong> Built strong engineering fundamentals that now enhance my AI solutions for mechanical systems.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Let's Connect</h2>
+        <p class="section-subtitle">Open to collaborations and exciting AI engineering opportunities</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div style="margin-bottom: 1.5rem;"></div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <a href="mailto:muhammadhassansaleem9@gmail.com">muhammadhassansaleem9@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <a href="tel:+4915157995372">+49 151 5799 5372</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Location</h4>
+                        <p>Ingolstadt, Bavaria, Germany</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/hassan-saleem-785392172/" target="_blank">Connect on LinkedIn</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/Hassan23121999" target="_blank">View GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/hassan-saleem-785392172/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/Hassan23121999" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:muhammadhassansaleem9@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 Muhammad Hassan Saleem. Crafted with passion for AI and engineering.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate timeline items on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = `${entry.target.dataset.delay || 0}s`;
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.dataset.delay = index * 0.2;
+            observer.observe(item);
+        });
+
+        // Add scroll effect to navigation
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const nav = document.querySelector('nav');
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Contact form handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create mailto link
+            const mailtoLink = `mailto:muhammadhassansaleem9@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message (optional)
+            alert('Opening your email client to send the message...');
+        });
+
+        // Add hover effect to skill items
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.05)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
